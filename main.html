@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="Designed by Nguyen Thanh Vinh" />
     <meta property="og:description" content="The best Tours, Hotel Service Booking in Vietnam" />
     <meta property="og:image" rel="icon" type="image/png"
-        content="https://cdn.popsww.com/blog/sites/2/2023/06/uchiha-obito.jpg" />
+        content="./icon.png" />
     <meta property="og:url" content="https://thanhvinhnguyeenx.github.io" />
     <meta property="og:publisher" content="#" />
 
@@ -38,7 +38,8 @@
     <link rel="stylesheet" href="https://viantravel.com/themes/viantravel/assets/news/js/aos/aos.css" />
     <link rel="stylesheet" href="https://viantravel.com/themes/viantravel/assets/news/js/core/fullcalendar.css">
     <link rel="stylesheet" href="https://viantravel.com/themes/viantravel/assets/news/css/style.css?v=1729305486">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
     <!-- noUISlider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.8.1/nouislider.min.js"></script>
@@ -117,45 +118,62 @@
                                                                                                     </div>
                                                                         
                                                                                                                     </div>
-                                                                    <div class="nav-menu-item">
-                                                                        <div class="d-flex flex-column align-items-start">
-                                                                            <img class="d-inline-block d-md-none" src="#" />
-                                                                            <a class="link" href="#" target="">Chill</a>
-                                                                            <ul class="sub-menus sub-menus-short">
-                                                                                <li><button id="playPauseBtn1">Có hẹn với thanh xuân</button></li>
-                                                                                <li><button id="playPauseBtn2">Bài ca tuổi trẻ</button></li>    
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <!-- Audio elements -->
-                                                                    <audio id="audioPlayer1" src="./music/Cohenvoithanhxuan.mp3"></audio>
-                                                                    <audio id="audioPlayer2" src="./music/Baicatuoitre.mp3"></audio>
-                                                                    
-                                                                    <style>
-                                                                        .sub-menus {
-                                                                            list-style-type: none;
-                                                                            padding: 0;
-                                                                            margin: 0;
-                                                                        }
-                                                                    
-                                                                        .sub-menus li {
-                                                                            margin-bottom: 10px; /* Khoảng cách giữa các nút */
-                                                                        }
-                                                                    
-                                                                        .sub-menus button {
-                                                                            padding: 10px;
-                                                                            border: none;
-                                                                            background-color: #ffffff;
-                                                                            color: rgb(8, 6, 6);
-                                                                            cursor: pointer;
-                                                                            width: 100%; /* Đặt chiều rộng để nó chiếm toàn bộ chiều rộng của container */
-                                                                        }
-                                                                    
-                                                                        .sub-menus button:hover {
-                                                                            background-color: #ffffff;
-                                                                        }
-                                                                    </style>
+                                                                                                                    <div class="nav-menu-item">
+                                                                                                                        <div class="d-flex flex-column align-items-start">
+                                                                                                                            <img class="d-inline-block d-md-none" src="#" />
+                                                                                                                            <a class="link" href="#" target="">Chill</a>
+                                                                                                                            <ul class="sub-menus sub-menus-short">
+                                                                                                                                <li><button id="playPauseBtn1" class="btn-hover">Có hẹn với thanh xuân</button></li>
+                                                                                                                                <li><button id="playPauseBtn2" class="btn-hover">Bài ca tuổi trẻ</button></li>
+                                                                                                                            </ul>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <!-- Audio elements -->
+                                                                                                                    <audio id="audioPlayer1" src="./music/Cohenvoithanhxuan.mp3"></audio>
+                                                                                                                    <audio id="audioPlayer2" src="./music/Baicatuoitre.mp3"></audio>                                                                                                                         
+                                                                                                                    <style>
+
+                                                                                                                        .sub-menus li {
+                                                                                                                            margin-bottom: 10px; /* Tăng khoảng cách giữa các mục, tùy chỉnh giá trị */
+                                                                                                                        }
+
+
+                                                                                                                        .sub-menus button {
+                                                                                                                            font-family: 'Lobster', cursive;
+                                                                                                                            font-size: 20px; /* Tăng kích thước để phù hợp với thiết kế font */
+                                                                                                                            line-height: 1.2;
+                                                                                                                            background-color: transparent; /* Nền trong suốt */
+                                                                                                                            color: #333333; /* Màu chữ */
+                                                                                                                            cursor: pointer;
+                                                                                                                            text-align: left;
+                                                                                                                            border: none;
+                                                                                                                            width: 100%; /* Chiếm toàn bộ chiều rộng */
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                        /* Hiệu ứng hover */
+                                                                                                                        .sub-menus button:hover {
+                                                                                                                            text-decoration: underline;
+                                                                                                                            text-decoration-color: #ffd700; /* Gạch chân màu vàng */
+                                                                                                                            color: #f19e18;
+                                                                                                                            transition: all 0.3s ease;
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                        /* Liên kết chính */
+                                                                                                                        .nav-menu-item a {
+                                                                                                                            font-family: 'Lobster', cursive;
+                                                                                                                            font-size: 20px; /* Tăng kích thước cho nổi bật */
+                                                                                                                            color: #333333;
+                                                                                                                            text-decoration: none;
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                        /* Hiệu ứng hover cho liên kết */
+                                                                                                                        .nav-menu-item a:hover {
+                                                                                                                            text-decoration: underline;
+                                                                                                                            text-decoration-color: #ffd700;
+                                                                                                                            transition: all 0.3s ease;
+                                                                                                                        }
+                                                                                                                    </style>                                                                                                                                                                                        
                                                                     
                                                                     <script>
                                                                         document.getElementById('playPauseBtn1').addEventListener('click', function() {
