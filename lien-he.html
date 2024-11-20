@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #2c2626;
+            color: #f0f0f0;
+        }
+        .contact-form {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #0a121e;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #1284cb;
+            background-color: #ffffff;
+            color: #090303;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .contact-info a {
+            color: #76c7c0;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <h2>Liên Hệ Với Chúng Tôi</h2>
+        <div class="form-group">
+            <label for="name">Tên của bạn</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Số điện thoại</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Tiêu đề</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Thông điệp</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Gửi Thông Tin</button>
+    </form>
+
+    <div class="contact-info">
+        <p>WEB DU LỊCH QUẢNG NGÃI - THIÊN ĐƯỜNG TOUR DU LỊCH QUẢNG NGÃI</p>
+        <p>Hotline: 0899926221 | Email: <a href="mailto:layer4flood@gmail.com">Layer4flood@gmail.com</a></p>
+        <p>Website: <a href="https://thanhvinhnguyeenx.github.io" target="_blank">ThanhVinhNguyeenx.github.io</a></p>
+    </div>
+
+</body>
+</html>

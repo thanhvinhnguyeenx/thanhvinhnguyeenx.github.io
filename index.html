@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký & Đăng Nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container input {
+            margin-bottom: 15px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .form-container input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+        }
+
+        .form-container button {
+            padding: 12px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container .footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .form-container .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .form-container .footer a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Form Đăng Ký -->
+    <div class="form-container" id="register-container">
+        <h2>Đăng Ký Tài Khoản</h2>
+        <form id="registration-form">
+            <input type="text" id="username" placeholder="Họ và tên" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng ký</button>
+        </form>
+        <div class="footer">
+            Đã có tài khoản? <a href="#" onclick="showLoginForm()">Đăng nhập ngay</a>
+        </div>
+    </div>
+
+    <!-- Form Đăng Nhập -->
+    <div class="form-container" id="login-container" style="display: none;">
+        <h2>Đăng Nhập</h2>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng nhập</button>
+        </form>
+        <div class="footer">
+            Chưa có tài khoản? <a href="#" onclick="showRegisterForm()">Đăng ký ngay</a>
+        </div>
+    </div>
+
+    <script>
+        // Hiển thị form đăng nhập
+        function showLoginForm() {
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        }
+
+        // Hiển thị form đăng ký
+        function showRegisterForm() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        }
+
+        // Xử lý đăng ký
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!validateEmail(email)) {
+                alert('Email không hợp lệ!');
+                return;
+            }
+
+            const userData = {
+                username: username,
+                email: email,
+                password: btoa(password) // Mã hóa mật khẩu để lưu trữ
+            };
+
+            localStorage.setItem('userData', JSON.stringify(userData)); // Lưu thông tin người dùng vào localStorage
+
+            alert('Tài khoản đã được lưu! Chuyển sang đăng nhập sau 5 giây...');
+
+            setTimeout(() => {
+                showLoginForm();
+            }, 4000);
+        });
+
+        // Xử lý đăng nhập
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const storedData = JSON.parse(localStorage.getItem('userData'));
+
+            if (storedData && storedData.email === email && storedData.password === btoa(password)) {
+                alert('Đăng nhập thành công!');
+                // Chuyển hướng tới trang web
+                window.location.href = 'https://thanhvinhnguyeenx.github.io'; // Thay bằng URL của trang bạn muốn
+            } else {
+                alert('Thông tin đăng nhập không đúng!');
+            }
+        });
+
+        // Kiểm tra email hợp lệ
+        function validateEmail(email) {
+            const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            return regex.test(email);
+        }
+    </script>
+
+</body>
+</html>
